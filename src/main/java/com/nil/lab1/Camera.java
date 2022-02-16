@@ -3,11 +3,14 @@
  */
 package com.nil.lab1;
 
+import edu.fiu.jit.SelfCheckCapable;
+import edu.fiu.jit.SelfCheckUtils;
+
 /**
  * @author gnilp
  *
  */
-public class Camera extends Body {
+public class Camera extends Body implements SelfCheckCapable{
 	
 	private String model;
 	private String brand;
@@ -40,18 +43,30 @@ public class Camera extends Body {
 		
 	}
 	
-	public void play() {
+	public void play1() {
 		// Stop play
 		
 	}
 	private boolean pausestate;
 	
-	public void pause() { 
+	public void pause1() { 
 		// Pause recording
 		
 	}
 	public void pause() {
 		// unpause recording
+	}
+
+	@Override
+	public String getComponentName() {
+		// TODO Auto-generated method stub
+		return "Camera";
+	}
+
+	@Override
+	public boolean selfCheck() {
+		// TODO Auto-generated method stub
+		return SelfCheckUtils.randomCheck(0.3);
 	}
 
 }

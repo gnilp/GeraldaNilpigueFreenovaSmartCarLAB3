@@ -3,17 +3,20 @@
  */
 package com.nil.lab1;
 
+import edu.fiu.jit.SelfCheckCapable;
+import edu.fiu.jit.SelfCheckUtils;
+
 /**
  * @author gnilp
  *
  */
-public class Wheels extends Body {
+public class Wheels extends Body implements SelfCheckCapable {
 	
 	private double size; 
 	private double amount;
 	private boolean turnrightstate;
 	
-	public void turn righ() {
+	public void turn  righ() {
 		// Turn wheel right
 	}
 	
@@ -46,6 +49,18 @@ public class Wheels extends Body {
 	public void movebackward () {
 		// Move wheel backward
 		
+	}
+
+	@Override
+	public String getComponentName() {
+		// TODO Auto-generated method stub
+		return "Wheel";
+	}
+
+	@Override
+	public boolean selfCheck() {
+		// TODO Auto-generated method stub
+		return SelfCheckUtils.randomCheck(0.1);
 	}
 
 }
